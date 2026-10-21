@@ -601,11 +601,16 @@
 
     /* Print View */
     @media print {
+      @page {
+        size: A4 portrait;
+        margin: 14mm 16mm;
+      }
+
       body {
         background: #fff !important;
-        color: #000 !important;
+        color: #1a1e1b !important;
         font-size: 13px !important;
-        line-height: 1.5 !important;
+        line-height: 1.55 !important;
       }
 
       .top-bar, .video-wrapper, .btn-action, .btn-outline, .no-print {
@@ -615,37 +620,239 @@
       .container {
         max-width: 100% !important;
         padding: 0 !important;
+        margin: 0 !important;
       }
 
       .hero {
-        padding: 0 0 20px 0 !important;
-        border-bottom: 1.5px solid #000 !important;
+        padding: 0 0 16px 0 !important;
+        border-bottom: 1.5px solid var(--border-soft) !important;
+      }
+
+      .hero-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 24px !important;
+      }
+
+      .hero-avatar {
+        width: 110px !important;
+        height: 110px !important;
       }
 
       .hero-title {
-        font-size: 1.8rem !important;
+        font-size: 1.7rem !important;
+        margin-bottom: 8px !important;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.5 !important;
+      }
+
+      .hero-contacts {
+        gap: 8px 16px !important;
+        font-size: 0.85rem !important;
       }
 
       section {
-        padding: 20px 0 !important;
-        border-bottom: 1px dashed #ccc !important;
+        padding: 18px 0 !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+      }
+
+      .section-header {
+        margin-bottom: 14px !important;
+        break-after: avoid;
+      }
+
+      .section-tag {
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
+      }
+
+      .section-title {
+        font-size: 1.3rem !important;
+      }
+
+      .section-desc {
+        font-size: 0.88rem !important;
+        margin-top: 2px !important;
       }
 
       .pitch-card {
-        border: 1px solid #ddd !important;
-        padding: 16px !important;
+        border: 1px solid var(--border-soft) !important;
+        padding: 16px 20px !important;
         box-shadow: none !important;
+        margin-bottom: 0 !important;
+        background: #FAF8F5 !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .pitch-quote {
+        font-size: 1.05rem !important;
+        padding-left: 14px !important;
+        margin: 12px 0 !important;
+      }
+
+      .collab-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+        margin-top: 14px !important;
+      }
+
+      .collab-item {
+        padding: 12px !important;
+        background: #fff !important;
+        border: 1px solid #E5E0D8 !important;
+      }
+
+      .collab-item h4 {
+        font-size: 0.92rem !important;
+        margin-bottom: 4px !important;
+      }
+
+      .collab-item p {
+        font-size: 0.82rem !important;
+        line-height: 1.45 !important;
+      }
+
+      /* Featured Video Grid */
+      .video-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin-top: 10px !important;
       }
 
       .video-card {
-        border: 1px solid #eee !important;
+        border: 1px solid var(--border-soft) !important;
         box-shadow: none !important;
+        break-inside: avoid;
         page-break-inside: avoid;
-        margin-bottom: 12px;
+        background: #fff !important;
       }
 
       .video-info {
-        padding: 12px !important;
+        padding: 12px 14px !important;
+      }
+
+      .video-title {
+        font-size: 0.98rem !important;
+        margin-bottom: 2px !important;
+      }
+
+      .video-role-tag {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        font-size: 0.8rem !important;
+        margin-bottom: 6px !important;
+      }
+
+      .video-highlight {
+        font-size: 0.83rem !important;
+        line-height: 1.45 !important;
+      }
+
+      .archive-list {
+        border: 1px solid var(--border-soft) !important;
+        margin-top: 10px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .archive-item {
+        padding: 8px 14px !important;
+      }
+
+      .archive-item-title {
+        font-size: 0.88rem !important;
+      }
+
+      .archive-item-role {
+        font-size: 0.78rem !important;
+      }
+
+      .byf-card {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        text-align: left !important;
+        padding: 14px 18px !important;
+        gap: 16px !important;
+        background: #FAF8F5 !important;
+        border: 1px solid var(--border-soft) !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .byf-avatar {
+        width: 56px !important;
+        height: 56px !important;
+      }
+
+      .byf-name {
+        font-size: 1rem !important;
+      }
+
+      .byf-desc {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+      }
+
+      .timeline-item {
+        margin-bottom: 16px !important;
+        padding-left: 20px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .timeline-role {
+        font-size: 0.98rem !important;
+      }
+
+      .timeline-company {
+        font-size: 0.86rem !important;
+      }
+
+      .timeline-body {
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
+      }
+
+      .footer-box {
+        padding: 16px 20px !important;
+        margin-bottom: 12px !important;
+        border: 1px solid var(--border-soft) !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Explicit Page Break Controls */
+      .section-featured-works {
+        break-before: page !important;
+        page-break-before: always !important;
+      }
+
+      .archive-block {
+        break-before: page !important;
+        page-break-before: always !important;
+      }
+
+      .section-experience {
+        break-before: page !important;
+        page-break-before: always !important;
+      }
+
+      .showcase-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
       }
     }
 
@@ -771,7 +978,7 @@
     </section>
 
     <!-- Selected Works (Video Embeds) -->
-    <section>
+    <section class="section-featured-works">
       <div class="section-header">
         <div class="section-tag">Featured Works</div>
         <h2 class="section-title">ตัวอย่างผลงานที่ผ่านมา</h2>
@@ -860,7 +1067,7 @@
       </div>
 
       <!-- Group 2: Extended Portfolio Archive (Clean List & Links) -->
-      <div class="showcase-block">
+      <div class="showcase-block archive-block">
         <div class="showcase-block-header">
           <span class="showcase-badge">Commercial & Campaign Archive</span>
           <h3 class="showcase-block-title">ผลงานโฆษณาและแคมเปญอื่นๆ เพิ่มเติม</h3>
@@ -964,7 +1171,7 @@
     </section>
 
     <!-- Experience Timeline -->
-    <section>
+    <section class="section-experience">
       <div class="section-header">
         <div class="section-tag">Career & Background</div>
         <h2 class="section-title">เส้นทางประสบการณ์ทำงาน</h2>
